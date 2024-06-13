@@ -1,0 +1,38 @@
+/* 
+.container__form {
+  /* background-color: #fff; White background */
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.form__title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.para {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Card Groups */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.text-muted {
+  color: #6c757d; /* Grey color for text-muted */
+}  */

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Page/home.Css">
+  <script src="https://kit.fontawesome.com/d62402eec1.js" crossorigin="anonymous"></script>
+  <title>Contact a Doctor Today</title>
+</head>
+<style>
+</style>
+<body>
+  <div class="container">
+    <h1>Welcome 
+      <span class="txt-type" data-wait="3000" data-words='["to Blessed HMO", "Contact Us"]'></span>
+    </h1>
+    <h2 class="page-link"><a href="/Health Care/healthcare.html">Need to speak with our team? Please let us know how we can help you today. We’ll get back to you at our earliest opportunity.</a></h2>
+    
+    <div class="countdown"></div>
+  <div id="clock"></div>
+  </div>
+
+  <div id="square">
+    <div id="leftSquare">
+      <div id="circle">
+        <img class="brand img-responsive" src="/lab doc3.jpg" alt="Company Logo">
+      </div>
+    </div>
+    <div id="rightSquare">
+      <form>
+        <input class="optin" type="text" placeholder="Firstname">
+        <input class="optin" type="text" placeholder="Lastname">
+        <input class="optin" type="tel" placeholder="Phone Number">
+        <input class="optin" type="text" placeholder="Company Name">
+        <input class="optin" type="text" placeholder="How many employees do you have?">
+        <textarea placeholder="Comment"></textarea>
+        <button class="button btn btn-danger">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="social-button" title="expand social media options">
+    <i class="fas fa-share-alt" id="social-icon"></i>
+    <a hidden class="social-point" href="https://wa.me/?text=Check%20out%20this%20cool%20social%20media%20button%20I%20found%20on%20codepen%3A%20https%3A%2F%2Fcodepen.io%2FunnamedDE%2Fpen%2FGbaJzK" target="_blank" rel="nofollow" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a hidden class="social-point" href="https://mail.google.com/mail/u/0/#inbox"
+      title="Email"><i class="fas fa-envelope"></i></a>
+    <a hidden class="social-point" href="https://twitter.com/home" target="_blank" rel="nofollow" title="Twitter"><i class="fa-brands fa-x-twitter"></i></i></a>
+    <a hidden class="social-point" href="sms:?body=Check%20out%20this%20cool%20social%20media%20button%20I%20found%20on%20codepen%3A%20https%3A%2F%2Fcodepen.io%2FunnamedDE%2Fpen%2FGbaJzK" target="_blank" rel="nofollow" title="SMS"><i class="fas fa-sms"></i></a>
+    <a hidden class="social-point" href="https://www.facebook.com/sharer.php?u=Check%20out%20this%20cool%20social%20media%20button%20I%20found%20on%20codepen%3A%20https%3A%2F%2Fcodepen.io%2FunnamedDE%2Fpen%2FGbaJzK" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
+  
+  <script>
+    // Define the TypeWriter class to create typewriter effect
+class TypeWriter {
+  // Constructor method to initialize the TypeWriter object
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement; // HTML element where typing effect will be displayed
+    this.words = words; // Array of words/phrases to type
+    this.txt = ''; // Current text being displayed
+    this.wordIndex = 0; // Index of the word currently being typed
+    this.wait = parseInt(wait, 10); // Delay between typing/deleting each character
+    this.isDeleting = false; // Flag to indicate whether deleting phase is active
+    this.type(); // Call the type method to start the typing effect
+  }
+
+  // Method to handle typing effect
+  type() {
+    const current = this.wordIndex % this.words.length; // Get the index of the current word
+    const fullTxt = this.words[current]; // Get the full text of the current word
+
+    if (this.isDeleting) {
+      // If deleting, remove a character
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // If typing, add a character
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Insert the typed text into the HTML element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Set the typing speed
+    let typeSpeed = 300;
+    if (this.isDeleting) {
+      typeSpeed /= 2; // If deleting, typing speed is slower
+    }
+
+    // Check if the word is complete
+    if (!this.isDeleting && this.txt === fullTxt) {
+      typeSpeed = this.wait; // If word is complete, pause before deleting
+      this.isDeleting = true; // Set deleting phase to true
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false; // If text is fully deleted, move to the next word
+      this.wordIndex++; // Increment word index
+      typeSpeed = 500; // Pause before typing next word
+    }
+
+    // Call the type method recursively after a delay
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+// Initialize the TypeWriter on DOM load
+document.addEventListener('DOMContentLoaded', Init);
+
+// Init function to initialize the TypeWriter object
+function Init() {
+  const txtElement = document.querySelector('.txt-type');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+
+  // Create a new TypeWriter object
+  new TypeWriter(txtElement, words, wait);
+
+
+  var social_open = false
+window.addEventListener('load', () => {
+  const menu = document.querySelector('.social-button');
+
+  menu.addEventListener('click', () => {
+    const icon = document.querySelector('#social-icon');
+    if(social_open == true) {
+      social_open = false;
+
+      menu.title = menu.title.replace(/hide/,"expand")
+      menu.classList.remove('social-button-open')
+      icon.classList.remove('fa-times')
+      icon.classList.add('fa-share-alt')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+          menu_point[i].classList.remove('social-point-open');
+        setTimeout(function() {
+          menu_point[i].hidden = true;
+        }, 800)
+      }
+    } else {
+      social_open = true;
+
+      menu.title = menu.title.replace(/expand/,"hide")
+      menu.classList.add('social-button-open');
+      icon.classList.remove('fa-share-alt')
+      icon.classList.add('fa-times')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].hidden = false;
+        setTimeout(function() {
+          menu_point[i].classList.add('social-point-open');
+        }, 200)
+      }
+    }
+  });
+})
+
+}
+  </script>
+</body>
+</html>
