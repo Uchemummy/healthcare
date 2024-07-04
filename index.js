@@ -4,7 +4,7 @@
 
  function buttonClick(e){
   // e.preventDefault();
-  window.location.href = './Health/healthcare.html'; 
+  window.location.href = '/index.html'; 
   console.log("Button Clicked")
 }
 
