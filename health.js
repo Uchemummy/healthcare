@@ -1,45 +1,44 @@
 //SECTION FOR SIGN-IN
- // let myButton = "buttonClicked";
+ let myButton = "buttonClicked";
  let generalDiv = document.getElementById("masterContainer");
-
- function buttonClick(e){
-  // e.preventDefault();
-  window.location.href = './Health/healthcare.html'; 
-  console.log("Button Clicked")
-}
 
 const signInButton = document.getElementById("buttonClicked");
 
-// signInButton.addEventListener("click", (e) =>{
-//   e.preventDefault();
-//   signInButton =
-//   console.log("Button Clicked")
-// })
+signInButton.addEventListener("click", (e) =>{
+  e.preventDefault();
+  // signInButton = buttonClick
+  window.location.href = '/health.html'; 
+  console.log("Button Clicked")
+}) //SECTION FOR SIGN-IN ENDS HERE
 
 
 function masterContainer(){
 console.log(generalDiv)
 
- function myDoctor(event){
-  event.preventDefault()
-  window.location.href = '/page/doctrscontact.html'; 
+// NAVBAR CONTROL/CONTACT A DOCTOR
+const myDoctor = document.getElementById("doctor");
+myDoctor.addEventListener("click", (e) =>{
+  e.preventDefault();
+  window.location.href = './Dashboard.html'; 
   console.log("Button Clicked")
-}
+})
 
 function healthClick(e){
   e.preventDefault()
-  window.location.href = '/page/doctrscontact.html'; 
+  window.location.href = '/Dashboard.html'; 
   console.log("Button Clicked")
 }
 
-
-let buttonClicked = document.getElementById("clearFix");
-function submitBtn(){
-  // e.preventDefault();
-  buttonClick.textContent = "Form Submitted";
-  alert("Message sent")
+// SIGN-UP STARTS HERE 
+// let buttonClicked = document.getElementById("clearFix");
+// function submitBtn(){
+//   // e.preventDefault();
+//   window.location.href = '/.html';
+//   buttonClicked.textContent = "Form Submitted";
+//   alert("Message sent")
  
 }
+
 
 function validateForm() {
   let x = document.forms["myForm"]["fname"].value;
@@ -53,16 +52,22 @@ function myFunction() {
   var element = document.getElementById("toggleClassElement");
   element.classList.toggle("active");
   alert("Button Clicked")
-  window.location.href = '/page/terms.html'; 
+  window.location.href = '/terms.html'; 
 }
 function clickCode() {
   var element = document.getElementById("toggleClassElement");
   element.classList.toggle("active");
   alert("Button Clicked")
-  window.location.href = '/page/privcy.html'; 
+  window.location.href = '/privcy.html'; 
 }
 
+function mainHomePage(event){
+  event.preventDefault(); // Prevent the default form submission
+  window.location.href = '/index.html'; 
+ console.log("First Button Clicked")
+
 }
+
 
 
 
@@ -115,19 +120,19 @@ function clickCode() {
 //   container.classList.add("right-panel-active");
 // });
 
-// // Event listeners for form submissions
+// Event listeners for form submissions
 // firstForm.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   // Assuming successful sign up, set authentication status and redirect
 //   setAuthStatus("signedIn");
-//   window.location.href = "/healthcare.html"; // Replace with your page URL
+//   window.location.href = "/health.html"; // Replace with your page URL
 // });
 
 // secondForm.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   // Assuming successful sign in, set authentication status and redirect
 //   setAuthStatus("signedIn");
-//   window.location.href = "/healthcare.html"; // Replace with your page URL
+//   window.location.href = "/health.html"; // Replace with your page URL
 // });
 
 
@@ -153,6 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Remember Me:', rememberMe);
     
     // Redirect to healthcare.html
-    // window.location.href = "/doctrscontact.html";
+     window.location.href = "/health.html";
   });
 });

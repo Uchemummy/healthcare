@@ -16,7 +16,7 @@ html,body{
   background-position:right ;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+  background: linear-gradient(-135deg, #0f060e, #b6bacf);
 }
 
 
@@ -41,7 +41,7 @@ html,body{
   color: #fff;
   user-select: none;
   border-radius: 15px 15px 0 0;
-  background: linear-gradient(135deg, #c773c1, #5a69b6);
+  background: linear-gradient(135deg, #0c050c, #0e163f);
 }
 
 .wrapper form{

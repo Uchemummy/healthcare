@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%; /* Base font size */
+}
+
 body {
   overflow-x: hidden;
   margin: 0;
@@ -46,7 +50,6 @@ a {
   font-size: 25px;
 }
 
-
 /* MEDIA FOR NAVBAR */
 @media screen and (max-width: 600px) {
   .topnav .search-container {
@@ -67,12 +70,12 @@ a {
 
 form p{
   /* margin: 20rem; */
-  padding-top: 100px;
+  padding-top: 5px;
   font-size: 25px;
   letter-spacing: 1px;
 }
 
-/* FIRST PAGE STARTS HERE */
+/* FIRST PAGE with IMAGE STARTS HERE */
 header {
   text-align: center;
   background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);
@@ -102,29 +105,60 @@ header .intro-text .intro-heading {
   /* line-height: 50px; */
 }    /*FIRST PAGE ENDS HERE*/
 
+@media (max-width: 1200px) {
+  .header {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    font-size: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+
+
+  }
+}
+@media  (min-width: 350px) {
+  .header {
+    width: 50%;
+    height: 20vh;
+  }
+  .side h1 {
+    font-size: 15px;
+  }
+}
 
 /*  GRID STARTS HERE */
 .cards-wrapper {
-  display:flex ;
+  display:grid ;
   align-items: center;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding:4rem;
-  margin: 0 auto;
-  width: max-content;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  padding:1rem;
+  /* margin: 0 auto;
+  width: max-content; */
 }
 
 .card {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 20em;
-  font-size: 1.5em;
+  height: 13em;
+  width: 100%;
+  max-width: 30em;
+  font-size: 1.2em;
   color: white;
   border-radius: 1em;
-  padding: 3em;
+  padding: 2em;
   background-position: center; 
   box-shadow: 0 0 5em -1em black;
   transition: all, var(--transition-time);
@@ -133,14 +167,16 @@ header .intro-text .intro-heading {
   border: 10px solid #ccc;
   text-decoration: none;
   display: flex;
+  flex-direction: column ;
   text-align: center;
-  /* align-items: flex-end; */
+  justify-content: space-between;
   background-size: cover;
   background-position: center;
 }
 
 .card:hover {
   transform: rotate(0);
+  text-decoration: none;
 }
 
 .card h1 {
@@ -149,7 +185,7 @@ header .intro-text .intro-heading {
   line-height: 1.2em;
   padding-top: 10px;
   letter-spacing: 3px;
-  line-height: 1.2em;
+  line-height: 1em;
 }
 
 .card p {
@@ -225,64 +261,34 @@ header .intro-text .intro-heading {
   margin-left: 1rem;
 }
 
-.card-grid-space  {
-  padding-bottom: 2rem;
+.card-grid-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .card:hover {
   color: var(--color);
-  background-color: white;
+  background-color: #ccc;
 }
 
 /* CARD WRAPPER RESPONSIVENESS STARTS FROM HERE*/
 
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-
-@media screen and (max-width: 900px) {
+/* Media Queries */
+@media (min-width: 350px) {
   .cards-wrapper {
     grid-template-columns: 1fr 1fr;
   }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
 }
 
-@media screen and (max-width: 500px) {
+@media (min-width: 600px) {
   .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
-}
-
- @media only screen and (min-width: 360px){
+@media (min-width: 900px) {
   .cards-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(150px 1fr));
-  }
-  .card-grid-space{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -298,34 +304,35 @@ header .intro-text .intro-heading {
   margin-bottom: 5px;
 }
 /* CAROUSEL */
-/* .download-info {
-
-}
- */
-
 /* CARD DOUBLE IMAGE STARTS FROM HERE */
 .container-flex {
   display: flex;
   background-color: #0367a6;
   color: #fff;
+  height: auto;
 }
 
 .category__item {
-  width: 700px;
-  height: 500px;
+  /* width: 700px; */
+  width: 100%;
+  max-width: 700px;
+  /* height: 500px; */
   border: 1px solid rgba(0,0,0,.125);
   overflow: hidden;
   position: relative;
   border-radius: 0.25rem;
-  margin: auto;
+  /* margin: auto; */
   margin-top: 20px;
-  display: block;
+  /* display: block; */
+  /* flex-wrap: wrap; */
+  /* max-width: 600px; */
 }
 
 .background-part,
 .background-part img {
   width: 100%;
   height: auto;
+
 }
 
 .background-part {
@@ -373,6 +380,29 @@ header .intro-text .intro-heading {
   max-height: 400px;
   overflow: hidden;
 }
+
+/* MEDIA SIZE STARTS HETRE */
+@media (min-width: 600px) {
+  .container-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .category__item,
+  .side {
+    width: 45%;
+  }
+}
+
+@media (min-width: 900px) {
+  .side h1 {
+    font-size: 2.5em;
+  }
+
+  .side p {
+    font-size: 1.2em;
+  }
+}
 /* CONTACT PAGE STARTS FROM HERE */
 
 /* FINAL PAGE STARTS FROM HERE */
@@ -383,7 +413,6 @@ main {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  /* background-color: #fff; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -462,7 +491,6 @@ main {
 }
 
 .footer-block ul li button {
-  /* margin-left: 10px; */
   padding: 8px 4px;
   border: none;
   border-radius: 8px;
@@ -476,13 +504,192 @@ main {
   background-color: #8a8787;
 }
 
-/* OUR SERVICES STARTS FROM HERE  */
-#services {
-  padding: 10rem 0;
+
+/* SUBTITUDE */
+main {
+  background: #333;
+  font-size: 20px;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
-/* DROPDOWN CONTENT STARTS HERE */
-.dropbtn {
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e0f7fa;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: static;
+}
+
+.newsletter-header h3 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.newsletter-header p {
+  margin: 5px 0 0;
+  color: #555;
+  text-align: center;
+}
+
+.newsletter-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input-email {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.btn-subscribe {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-subscribe:hover {
+  background-color: #004d40;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-block {
+  flex: 1 1 200px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.footer-block h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-block ul li button {
+  padding: 8px 4px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #444;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.footer-block ul li button:hover {
+  background-color: #8a8787;
+}
+
+.last-flex {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.last-code {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 500px;
+  /* text-align: center; */
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.line {
+  background-color: white;
+  height: 1px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .newsletter-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .newsletter-signup {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .input-email {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    padding: 3rem;
+  }
+
+  .footer-links {
+    padding: 40px;
+  }
+  .last-flex {
+    display: flex;
+    font-size: 15px;
+  }
+}
+
+
+/* OUR SERVICES STARTS FROM HERE  */
+#services {
+  padding: 3rem 0;
+}
+
+DROPDOWN CONTENT STARTS HERE */
+/* .dropbtn {
   background-color: #222;
   color: white;
   padding: 16px;

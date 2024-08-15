@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="register_form.Css">
-  <title>Responsive Registeration Form</title>
+  <link rel="stylesheet" href="/style/register_form.Css">
+  <title> Registeration Form</title>
 </head>
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title"> BlessedHMO Reg. Form</div>
     <div class="content">
       <form action="#">
         <div class="user-details">
@@ -58,11 +58,23 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+        <a href="/health.html"><input type="submit" value="Register"></a>
         </div>
       </form>
     </div>
   </div>
   
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Display the success message
+      alert('Submitted Successfully');
+
+      // Redirect to the health page
+      window.location.href = "/health.html";
+    });
+  </script>
+  <!-- <script src="/health.js"></script> -->
 </body>
 </html>
