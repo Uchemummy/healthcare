@@ -23,11 +23,12 @@ myDoctor.addEventListener("click", (e) =>{
   console.log("Button Clicked")
 })
 
-function healthClick(e){
-  e.preventDefault()
-  window.location.href = '/Dashboard.html'; 
-  console.log("Button Clicked")
-}
+// function healthClick(e){
+//   e.preventDefault()
+//   window.location.href = '/Dashbord.html'; 
+//   healthClick = 
+//   console.log("Button Clicked")
+// }
 
 // SIGN-UP STARTS HERE 
 // let buttonClicked = document.getElementById("clearFix");

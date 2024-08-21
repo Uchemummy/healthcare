@@ -32,7 +32,7 @@ body{
   top: 0;
   right: 0;
   background-color: #0c012f;
-  height: 100vh;
+  height: 226vh;
   /* width: 20%; */
   width: 80px;
   padding: 0px 20px;
@@ -40,7 +40,7 @@ body{
 }
 /* TO WORK ON ICON STARTS HERE */
 ul li {
-  padding: 18px;px;
+  padding: 18px;
   margin: 8px 0;
 }
 
@@ -257,9 +257,7 @@ ul a span{
 .yellow{
   background: rgb(136, 136, 0);
 }
-.green{
-  background:;
-}
+
 .blue{
   background: orangered;
 }
@@ -270,7 +268,6 @@ ul a span{
   justify-content: space-between;
   color: red;
   padding: 20px ;
-  background-color:;
 }
 
 .general{
